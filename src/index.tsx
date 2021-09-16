@@ -1,7 +1,10 @@
 import { NativeModules } from 'react-native';
 
 type CheckoutType = {
-  multiply(a: number, b: number): Promise<number>;
+  initiatePayment(
+    publicKey: string,
+    environment: 'sandbox' | 'live'
+  ): Promise<number>;
 };
 
 const { Checkout } = NativeModules;

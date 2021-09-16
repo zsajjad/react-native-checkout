@@ -2,7 +2,8 @@
 
 @interface RCT_EXTERN_MODULE(Checkout, NSObject)
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
+RCT_EXTERN_METHOD(initiatePayment:(NSString)publicKey
+                  withEnvironment:(NSString)environment
                  withResolver:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
 

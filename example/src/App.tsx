@@ -1,18 +1,20 @@
 import * as React from 'react';
-
 import { StyleSheet, View, Text } from 'react-native';
 import Checkout from 'react-native-checkout';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    Checkout.multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text
+        onPress={() => {
+          Checkout.initiatePayment(
+            'pk_test_f6fe424a-af09-43eb-b416-6c3badb7286d',
+            'sandbox'
+          );
+        }}
+      >
+        Test
+      </Text>
     </View>
   );
 }
